@@ -18,6 +18,7 @@ from .serilizer import ResourceTypeSerializer, ResourceSerializer, VendorSeriliz
 # Registering the new user--------------------------------------------
 
 @api_view(['POST',])
+@permission_classes([AllowAny])
 def register(request):
     password = request.data.get('password')
     hash_password = make_password(password)
